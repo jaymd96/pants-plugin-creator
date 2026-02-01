@@ -258,6 +258,19 @@ When generating plugin code, always ensure:
 5. **Deterministic outputs** - Same inputs must produce same outputs
 6. **Use Process for subprocesses** - Hermetic execution via the engine
 
+## v2.30+ Gotchas
+
+Critical issues specific to Pants 2.30+:
+
+1. **Namespace subsystem scopes** - Use `myplugin-ruff` not `ruff` to avoid conflicts with built-in backends
+2. **One goal definition per scope** - Define each `GoalSubsystem.name` in exactly one place
+3. **Use 3-arg Get() syntax** - `Get(Output, Input, value)` not dict syntax (it's broken)
+4. **No `from __future__ import annotations`** - Breaks Pants runtime type inference
+5. **Subsystems auto-register** - Don't call `.rules()` on Subsystem classes
+6. **Bump version for local testing** - Pants caches wheels by filename
+
+See `develop-pants-plugin` skill's `reference/gotchas.md` for detailed fixes.
+
 ## Reference Documentation
 
 For detailed information, read these supporting files:

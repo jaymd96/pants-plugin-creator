@@ -341,10 +341,24 @@ for file in files:
 await Get(ProcessResult, Process, Process(argv=["tool", *files]))
 ```
 
+## Critical Gotchas (v2.30+)
+
+Before developing, be aware of these common pitfalls:
+
+1. **Namespace subsystem scopes** - Don't use `ruff`, use `myplugin-ruff` to avoid conflicts
+2. **One goal definition per scope** - Define goals only in `goals/`, not in rule files
+3. **Use 3-arg Get() syntax** - Dict syntax is broken; accept deprecation warnings
+4. **No `from __future__ import annotations`** - Breaks Pants type inference
+5. **Subsystems don't have `.rules()`** - They auto-register when used as parameters
+6. **Bump version for each test** - Pants caches wheels by filename
+
+See `reference/gotchas.md` for detailed explanations and fixes.
+
 ## Reference Documentation
 
 For detailed API information, see:
 
+- `reference/gotchas.md` - **Critical v2.30+ gotchas and fixes**
 - `reference/debugging.md` - Comprehensive debugging guide
 - `reference/testing.md` - Testing patterns and fixtures
 - `reference/upgrading.md` - Version migration guide
