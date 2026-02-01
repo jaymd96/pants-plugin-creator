@@ -103,7 +103,7 @@ baseline_python_project(
     name="project",
     sources=["src/**/*.py"],
     test_sources=["tests/**/*.py"],
-    python_version="3.11",
+    python_version="3.13",
     line_length=120,
     strict=True,
     coverage_threshold=80,

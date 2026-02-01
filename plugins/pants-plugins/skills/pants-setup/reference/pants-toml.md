@@ -11,7 +11,7 @@ Complete reference for configuring Pants via pants.toml.
 ```toml
 [GLOBAL]
 # Pants version to use (required)
-pants_version = "2.20.0"
+pants_version = "2.30.1"
 
 # Backend packages to load
 backend_packages = [
@@ -31,7 +31,7 @@ backend_packages = [
 
 # Third-party plugins
 plugins = [
-    "pants-python-baseline==0.1.0",
+    "jaymd96-pants-baseline==0.1.0",
 ]
 
 # Build root (usually current directory)
@@ -57,7 +57,7 @@ enabled = false
 
 [python]
 # Python interpreter constraints
-interpreter_constraints = ["CPython>=3.11,<4"]
+interpreter_constraints = ["CPython>=3.13,<4"]
 
 # Enable lockfile generation
 enable_resolves = true

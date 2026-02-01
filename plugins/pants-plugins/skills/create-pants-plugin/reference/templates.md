@@ -15,7 +15,7 @@ version = "0.1.0"
 description = "A custom Pants plugin for {purpose}"
 readme = "README.md"
 license = {text = "Apache-2.0"}
-requires-python = ">=3.11,<4"
+requires-python = ">=3.12,<4"
 authors = [
     {name = "{author}", email = "{email}"},
 ]
@@ -24,8 +24,8 @@ classifiers = [
     "Environment :: Plugins",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 
 [project.urls]
@@ -72,14 +72,14 @@ url = "https://test.pypi.org/legacy/"
 
 [tool.black]
 line-length = 100
-target-version = ["py311", "py312"]
+target-version = ["py312", "py313"]
 
 [tool.isort]
 profile = "black"
 line_length = 100
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.13"
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

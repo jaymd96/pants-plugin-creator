@@ -87,7 +87,7 @@ build-backend = "hatchling.build"
 name = "{plugin-name}"
 version = "0.1.0"
 description = "{description}"
-requires-python = ">=3.11,<4"
+requires-python = ">=3.12,<4"
 authors = [{name = "{author}", email = "{email}"}]
 
 [tool.hatch.build.targets.wheel]

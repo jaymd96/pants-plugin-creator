@@ -159,11 +159,11 @@ process = Process(
 ```toml
 # pyproject.toml
 [project]
-requires-python = ">=3.11,<4"  # Match Pants requirements
+requires-python = ">=3.12,<4"  # Match Pants requirements
 
 [project.optional-dependencies]
 dev = [
-    "pantsbuild.pants>=2.18,<2.20",  # Pin to compatible range
+    "pantsbuild.pants>=2.28,<2.32",  # Pin to compatible range
 ]
 ```
 

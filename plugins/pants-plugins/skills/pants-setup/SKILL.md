@@ -37,7 +37,7 @@ backend_packages = [
 plugins = ["jaymd96-pants-baseline==0.1.0"]
 
 [python-baseline]
-python_version = "3.11"
+python_version = "3.13"
 line_length = 120
 coverage_threshold = 80
 ```
@@ -115,6 +115,73 @@ Based on intent, perform the appropriate action.
 
 ---
 
+## Installing Pants (Bootstrap Script)
+
+The recommended way to install Pants is using the bootstrap script. This ensures consistent Pants versions across all developers and CI environments.
+
+### Download and Setup
+
+```bash
+# Download the official Pants launcher
+curl -fsSL https://static.pantsbuild.org/setup/pants -o pants
+chmod +x pants
+```
+
+### How It Works
+
+The `./pants` script is a small launcher that:
+1. Reads `pants_version` from `pants.toml`
+2. Downloads that specific Pants version if not cached
+3. Runs the requested Pants command
+
+This means developers don't need to install Pants globally - just run `./pants` and it handles everything.
+
+### Commit the Script
+
+Always commit the `pants` script to version control:
+
+```bash
+git add pants
+git commit -m "Add Pants bootstrap script"
+```
+
+### Example pants.toml
+
+```toml
+[GLOBAL]
+pants_version = "2.30.1"
+backend_packages = [
+    "pants.backend.python",
+]
+
+[python]
+interpreter_constraints = ["CPython>=3.13,<4"]
+```
+
+### First Run
+
+```bash
+# This downloads Pants and shows available goals
+./pants goals
+
+# Run a specific goal
+./pants lint ::
+```
+
+### CI Integration
+
+In CI, just use `./pants` directly - no installation step needed:
+
+```yaml
+# GitHub Actions example
+- name: Run tests
+  run: ./pants test ::
+```
+
+For more details, see: https://www.pantsbuild.org/stable/docs/getting-started/installing-pants
+
+---
+
 ## Adding Python Baseline
 
 When adding the Python baseline plugin:
@@ -132,7 +199,7 @@ fi
 
 ```toml
 [GLOBAL]
-pants_version = "2.20.0"
+pants_version = "2.30.1"
 backend_packages = [
     "pants.backend.python",
     "pants_baseline",
@@ -142,12 +209,12 @@ plugins = [
 ]
 
 [python]
-interpreter_constraints = ["CPython>=3.11,<4"]
+interpreter_constraints = ["CPython>=3.13,<4"]
 
 # Python Baseline Configuration
 [python-baseline]
 enabled = true
-python_version = "3.11"
+python_version = "3.13"
 line_length = 120
 src_roots = ["src"]
 test_roots = ["tests"]
@@ -179,7 +246,7 @@ baseline_python_project(
     name="project",
     sources=["src/**/*.py"],
     test_sources=["tests/**/*.py"],
-    python_version="3.11",
+    python_version="3.13",
     line_length=120,
     strict=True,
     coverage_threshold=80,

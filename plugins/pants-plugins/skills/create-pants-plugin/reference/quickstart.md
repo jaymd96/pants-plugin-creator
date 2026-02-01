@@ -31,7 +31,7 @@ build-backend = "hatchling.build"
 [project]
 name = "my-plugin"
 version = "0.1.0"
-requires-python = ">=3.11,<4"
+requires-python = ">=3.12,<4"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/my_plugin"]
