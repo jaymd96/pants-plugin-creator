@@ -12,6 +12,13 @@
       "description": "Create production-grade Pants build system plugins with guided assistance",
       "version": "1.0.0",
       "keywords": ["pants", "build-system", "plugin", "scaffolding", "python"]
+    },
+    {
+      "name": "pants-plugin-dev",
+      "source": "./plugins/pants-plugin-dev",
+      "description": "Development assistance for existing Pants plugins - add features, debug, test, and upgrade",
+      "version": "1.0.0",
+      "keywords": ["pants", "build-system", "plugin", "development", "debugging", "testing"]
     }
   ]
 }

@@ -1,150 +1,132 @@
-# Pants Plugin Creator
+# Pants Plugin Marketplace
 
-A Claude Code plugin for creating production-grade Pants build system plugins.
+A Claude Code marketplace with plugins for Pants build system development.
 
-## Features
+## Available Plugins
 
-- **Guided Workflow**: Interactive discovery of plugin requirements
-- **Complete Generation**: Creates full plugin structure with all necessary files
-- **Best Practices**: Follows official Pants plugin development guidelines
-- **Comprehensive Reference**: Bundled documentation for Target API, Rules API, and patterns
-- **Pattern Templates**: Ready-to-use patterns for linters, code generators, and custom targets
+### 1. pants-plugin-creator
+**Create new Pants plugins from scratch**
+
+- Guided workflow for requirements gathering
+- Generates complete plugin structure with all files
+- Includes pyproject.toml, targets, rules, goals, tests
+- Ready-to-use patterns for linters, code generators, custom targets
+
+### 2. pants-plugin-dev
+**Develop and modify existing Pants plugins**
+
+- Add new targets, fields, rules, goals to existing plugins
+- Debug common issues (rules not firing, caching problems, type errors)
+- Write and improve tests with RuleRunner
+- Upgrade plugins for new Pants versions
+- Performance optimization guidance
 
 ## Installation
-
-### Option 1: Install from GitHub (Recommended)
 
 ```bash
 # Add the marketplace
 /plugin marketplace add jaymd96/pants-plugin-creator
 
-# Install the plugin
+# Install one or both plugins
 /plugin install pants-plugin-creator@pants-plugins
+/plugin install pants-plugin-dev@pants-plugins
 ```
 
-Users can then update anytime with:
+Update anytime with:
 ```bash
 /plugin marketplace update pants-plugins
 ```
 
-### Option 2: Install from Local Directory
-
-```bash
-claude --plugin-dir /path/to/pants-plugin-creator
-```
-
-### Option 3: Install Globally
-
-```bash
-cp -r pants-plugin-creator ~/.claude/plugins/
-```
-
 ## Usage
 
-Invoke the skill by asking Claude to create a Pants plugin:
+### Creating a New Plugin
 
 ```
-/create-pants-plugin
+/pants-plugin-creator:create-pants-plugin
 ```
 
-Or naturally:
+Or ask naturally:
+- "Create a Pants plugin that lints shell scripts"
+- "I need a plugin for generating code from protobuf"
+
+### Developing an Existing Plugin
 
 ```
-"Create a Pants plugin that lints shell scripts with shellcheck"
-"I need a plugin for generating code from protobuf definitions"
-"Help me build a custom Pants backend for my documentation system"
+/pants-plugin-dev:develop-pants-plugin
 ```
 
-## What Gets Generated
+Or ask naturally:
+- "Add a new target type to my plugin"
+- "Debug why my rule isn't being called"
+- "Write tests for my Pants plugin"
+- "Upgrade my plugin for Pants 2.19"
 
-The skill creates a complete plugin structure:
+## What pants-plugin-creator Generates
 
 ```
 my-plugin/
-├── pyproject.toml           # Hatch-based build configuration
-├── README.md                # Plugin documentation
-├── LICENSE                  # Apache 2.0 license
-├── Makefile                 # Development commands
-├── .gitignore
+├── pyproject.toml           # Hatch-based build config
 ├── src/my_plugin/
-│   ├── __init__.py
-│   ├── version.py
-│   ├── register.py          # Plugin entry point (REQUIRED)
-│   ├── subsystem.py         # Configuration options
-│   ├── targets.py           # Custom target types
+│   ├── register.py          # Plugin entry point
+│   ├── targets.py           # Target definitions
 │   ├── rules.py             # Business logic
-│   └── goals.py             # User commands
+│   ├── goals.py             # User commands
+│   └── subsystem.py         # Configuration
 ├── tests/
-│   ├── conftest.py          # Pytest fixtures
+│   ├── conftest.py
 │   └── unit/
-└── docs/
+├── README.md
+├── Makefile
+└── .gitignore
 ```
 
 ## Reference Documentation
 
-The skill includes comprehensive reference materials:
+Both plugins include comprehensive references:
 
-- **quickstart.md** - 5-minute introduction to Pants plugins
-- **developer-guide.md** - Best practices, common pitfalls, production checklist
-- **api-reference.md** - Complete Target API and Rules API documentation
-- **templates.md** - File templates for all plugin components
-- **patterns/** - Ready-to-use patterns:
-  - `linter.md` - External linter integration
-  - `codegen.md` - Code generation from definitions
-  - `custom-target.md` - Custom BUILD file syntax
+**pants-plugin-creator:**
+- `quickstart.md` - 5-minute intro
+- `api-reference.md` - Target & Rules API
+- `templates.md` - File templates
+- `patterns/` - Linter, codegen, custom target patterns
+
+**pants-plugin-dev:**
+- `debugging.md` - Troubleshooting guide
+- `testing.md` - RuleRunner patterns
+- `upgrading.md` - Version migration
+- `performance.md` - Optimization techniques
 
 ## Development Workflow
 
-After generating a plugin:
-
 ```bash
 cd my-plugin
-hatch env create       # Set up development environment
+hatch env create       # Set up environment
 hatch run test         # Run tests
 hatch run fmt          # Format code
-hatch run lint         # Check code quality
-hatch run all          # Run everything
+hatch run lint         # Check quality
+hatch run all          # Everything
 ```
 
-## Publishing
-
-### To PyPI
+## Publishing to PyPI
 
 ```bash
 hatch build
 hatch publish
 ```
 
-### As In-Repo Plugin
-
-```toml
-# pants.toml
-[GLOBAL]
-pythonpath = ["%(buildroot)s/plugins/my-plugin/src"]
-backend_packages = ["my_plugin"]
-```
-
-## Key Concepts
-
-The skill teaches core Pants concepts:
+## Key Pants Concepts
 
 - **Targets**: Metadata about code in BUILD files
 - **Fields**: Individual pieces of target metadata
-- **Rules**: Pure async functions that process targets
-- **Goals**: User-facing commands (`pants my-goal`)
+- **Rules**: Pure async functions (no side effects!)
+- **Goals**: User commands (`pants my-goal`)
 - **Subsystems**: Configuration in pants.toml
-
-## Requirements
-
-- Claude Code CLI
-- Python 3.11+
-- Hatch (for plugin development)
 
 ## Resources
 
 - [Official Pants Plugin Docs](https://www.pantsbuild.org/stable/docs/writing-plugins/overview)
 - [Pants GitHub](https://github.com/pantsbuild/pants)
-- [Pants Slack Community](https://pantsbuild.slack.com)
+- [Pants Slack](https://pantsbuild.slack.com)
 
 ## License
 
