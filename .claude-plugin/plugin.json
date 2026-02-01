@@ -1,0 +1,11 @@
+{
+  "name": "pants-plugin-creator",
+  "version": "1.0.0",
+  "description": "Create production-grade Pants build system plugins with guided assistance",
+  "author": {
+    "name": "Pants Plugin Creator",
+    "url": "https://github.com/pantsbuild/pants"
+  },
+  "keywords": ["pants", "build-system", "plugin", "scaffolding", "python"],
+  "skills": "./skills/"
+}

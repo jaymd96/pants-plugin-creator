@@ -1,0 +1,17 @@
+{
+  "name": "pants-plugins",
+  "description": "Plugins for Pants build system development",
+  "owner": {
+    "name": "jaymd96",
+    "url": "https://github.com/jaymd96"
+  },
+  "plugins": [
+    {
+      "name": "pants-plugin-creator",
+      "source": ".",
+      "description": "Create production-grade Pants build system plugins with guided assistance",
+      "version": "1.0.0",
+      "keywords": ["pants", "build-system", "plugin", "scaffolding", "python"]
+    }
+  ]
+}
