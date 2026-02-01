@@ -1,0 +1,12 @@
+{
+  "name": "pants-oracle",
+  "version": "1.0.0",
+  "description": "Comprehensive Pants build system knowledge base - answers any question about Pants architecture, APIs, and best practices",
+  "skills": [
+    {
+      "name": "pants-oracle",
+      "path": "../skills/pants-oracle/SKILL.md",
+      "description": "Expert knowledge base for all Pants build system questions - architecture, rules, targets, caching, and more"
+    }
+  ]
+}

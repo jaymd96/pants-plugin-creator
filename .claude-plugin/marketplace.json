@@ -19,6 +19,13 @@
       "description": "Development assistance for existing Pants plugins - add features, debug, test, and upgrade",
       "version": "1.0.0",
       "keywords": ["pants", "build-system", "plugin", "development", "debugging", "testing"]
+    },
+    {
+      "name": "pants-oracle",
+      "source": "./plugins/pants-oracle",
+      "description": "Comprehensive Pants build system knowledge base - answers any question about architecture, APIs, and best practices",
+      "version": "1.0.0",
+      "keywords": ["pants", "build-system", "documentation", "knowledge-base", "reference"]
     }
   ]
 }

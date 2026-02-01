@@ -21,6 +21,15 @@ A Claude Code marketplace with plugins for Pants build system development.
 - Upgrade plugins for new Pants versions
 - Performance optimization guidance
 
+### 3. pants-oracle
+**Comprehensive Pants knowledge base**
+
+- Expert answers to any Pants question
+- Complete API reference for targets, fields, rules
+- Engine architecture and caching internals
+- Testing patterns with RuleRunner
+- Best practices and common pitfalls
+
 ## Installation
 
 ```bash
@@ -30,6 +39,7 @@ A Claude Code marketplace with plugins for Pants build system development.
 # Install one or both plugins
 /plugin install pants-plugin-creator@pants-plugins
 /plugin install pants-plugin-dev@pants-plugins
+/plugin install pants-oracle@pants-plugins
 ```
 
 Update anytime with:
@@ -60,6 +70,18 @@ Or ask naturally:
 - "Debug why my rule isn't being called"
 - "Write tests for my Pants plugin"
 - "Upgrade my plugin for Pants 2.19"
+
+### Pants Knowledge Base (Oracle)
+
+```
+/pants-oracle:pants-oracle
+```
+
+Or ask naturally:
+- "How does Pants caching work?"
+- "What's the difference between Digest and Snapshot?"
+- "How do I create a custom field type?"
+- "Explain the rule graph"
 
 ## What pants-plugin-creator Generates
 
@@ -95,6 +117,12 @@ Both plugins include comprehensive references:
 - `testing.md` - RuleRunner patterns
 - `upgrading.md` - Version migration
 - `performance.md` - Optimization techniques
+
+**pants-oracle:**
+- `architecture.md` - Engine internals and design
+- `targets.md` - Complete Target API reference
+- `rules.md` - Complete Rules API reference
+- `testing.md` - Testing patterns and utilities
 
 ## Development Workflow
 
