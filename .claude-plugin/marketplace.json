@@ -1,31 +1,17 @@
 {
   "name": "pants-plugins",
-  "description": "Plugins for Pants build system development",
+  "description": "Complete toolkit for Pants build system plugin development",
   "owner": {
     "name": "jaymd96",
     "url": "https://github.com/jaymd96"
   },
   "plugins": [
     {
-      "name": "pants-plugin-creator",
-      "source": "./plugins/pants-plugin-creator",
-      "description": "Create production-grade Pants build system plugins with guided assistance",
+      "name": "pants-plugins",
+      "source": "./plugins/pants-plugins",
+      "description": "Create, develop, and reference Pants build system plugins - includes creator, dev tools, and knowledge base",
       "version": "1.0.0",
-      "keywords": ["pants", "build-system", "plugin", "scaffolding", "python"]
-    },
-    {
-      "name": "pants-plugin-dev",
-      "source": "./plugins/pants-plugin-dev",
-      "description": "Development assistance for existing Pants plugins - add features, debug, test, and upgrade",
-      "version": "1.0.0",
-      "keywords": ["pants", "build-system", "plugin", "development", "debugging", "testing"]
-    },
-    {
-      "name": "pants-oracle",
-      "source": "./plugins/pants-oracle",
-      "description": "Comprehensive Pants build system knowledge base - answers any question about architecture, APIs, and best practices",
-      "version": "1.0.0",
-      "keywords": ["pants", "build-system", "documentation", "knowledge-base", "reference"]
+      "keywords": ["pants", "build-system", "plugin", "development", "documentation"]
     }
   ]
 }

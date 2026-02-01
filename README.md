@@ -1,20 +1,55 @@
-# Pants Plugin Marketplace
+# Pants Plugins for Claude Code
 
-A Claude Code marketplace with plugins for Pants build system development.
+A Claude Code plugin with comprehensive tools for Pants build system development.
 
-## Available Plugins
+## Installation
 
-### 1. pants-plugin-creator
+```bash
+# Add the marketplace
+/plugin marketplace add jaymd96/pants-plugin-creator
+
+# Install the plugin
+/plugin install pants-plugins@pants-plugins
+```
+
+Update anytime with:
+```bash
+/plugin marketplace update pants-plugins
+```
+
+## Available Skills
+
+### 1. create-pants-plugin
 **Create new Pants plugins from scratch**
 
+```
+/pants-plugins:create-pants-plugin
+```
+
+Or ask naturally:
+- "Create a Pants plugin that lints shell scripts"
+- "I need a plugin for generating code from protobuf"
+
+Features:
 - Guided workflow for requirements gathering
 - Generates complete plugin structure with all files
 - Includes pyproject.toml, targets, rules, goals, tests
 - Ready-to-use patterns for linters, code generators, custom targets
 
-### 2. pants-plugin-dev
+### 2. develop-pants-plugin
 **Develop and modify existing Pants plugins**
 
+```
+/pants-plugins:develop-pants-plugin
+```
+
+Or ask naturally:
+- "Add a new target type to my plugin"
+- "Debug why my rule isn't being called"
+- "Write tests for my Pants plugin"
+- "Upgrade my plugin for Pants 2.19"
+
+Features:
 - Add new targets, fields, rules, goals to existing plugins
 - Debug common issues (rules not firing, caching problems, type errors)
 - Write and improve tests with RuleRunner
@@ -24,57 +59,8 @@ A Claude Code marketplace with plugins for Pants build system development.
 ### 3. pants-oracle
 **Comprehensive Pants knowledge base**
 
-- Expert answers to any Pants question
-- Complete API reference for targets, fields, rules
-- Engine architecture and caching internals
-- Testing patterns with RuleRunner
-- Best practices and common pitfalls
-
-## Installation
-
-```bash
-# Add the marketplace
-/plugin marketplace add jaymd96/pants-plugin-creator
-
-# Install one or both plugins
-/plugin install pants-plugin-creator@pants-plugins
-/plugin install pants-plugin-dev@pants-plugins
-/plugin install pants-oracle@pants-plugins
 ```
-
-Update anytime with:
-```bash
-/plugin marketplace update pants-plugins
-```
-
-## Usage
-
-### Creating a New Plugin
-
-```
-/pants-plugin-creator:create-pants-plugin
-```
-
-Or ask naturally:
-- "Create a Pants plugin that lints shell scripts"
-- "I need a plugin for generating code from protobuf"
-
-### Developing an Existing Plugin
-
-```
-/pants-plugin-dev:develop-pants-plugin
-```
-
-Or ask naturally:
-- "Add a new target type to my plugin"
-- "Debug why my rule isn't being called"
-- "Write tests for my Pants plugin"
-- "Upgrade my plugin for Pants 2.19"
-
-### Pants Knowledge Base (Oracle)
-
-```
-/pants-oracle:pants-oracle
+/pants-plugins:pants-oracle
 ```
 
 Or ask naturally:
@@ -83,7 +69,14 @@ Or ask naturally:
 - "How do I create a custom field type?"
 - "Explain the rule graph"
 
-## What pants-plugin-creator Generates
+Features:
+- Expert answers to any Pants question
+- Complete API reference for targets, fields, rules
+- Engine architecture and caching internals
+- Testing patterns with RuleRunner
+- Best practices and common pitfalls
+
+## What create-pants-plugin Generates
 
 ```
 my-plugin/
@@ -104,15 +97,15 @@ my-plugin/
 
 ## Reference Documentation
 
-Both plugins include comprehensive references:
+The plugin includes comprehensive reference docs:
 
-**pants-plugin-creator:**
+**create-pants-plugin:**
 - `quickstart.md` - 5-minute intro
 - `api-reference.md` - Target & Rules API
 - `templates.md` - File templates
 - `patterns/` - Linter, codegen, custom target patterns
 
-**pants-plugin-dev:**
+**develop-pants-plugin:**
 - `debugging.md` - Troubleshooting guide
 - `testing.md` - RuleRunner patterns
 - `upgrading.md` - Version migration

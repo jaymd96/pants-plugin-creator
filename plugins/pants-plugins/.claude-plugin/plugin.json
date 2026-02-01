@@ -1,0 +1,22 @@
+{
+  "name": "pants-plugins",
+  "version": "1.0.0",
+  "description": "Complete toolkit for Pants build system plugin development - create, develop, and reference",
+  "skills": [
+    {
+      "name": "create-pants-plugin",
+      "path": "../skills/create-pants-plugin/SKILL.md",
+      "description": "Create new Pants plugins from scratch with guided workflow"
+    },
+    {
+      "name": "develop-pants-plugin",
+      "path": "../skills/develop-pants-plugin/SKILL.md",
+      "description": "Develop existing Pants plugins - add features, debug, test, upgrade"
+    },
+    {
+      "name": "pants-oracle",
+      "path": "../skills/pants-oracle/SKILL.md",
+      "description": "Comprehensive Pants knowledge base - architecture, APIs, best practices"
+    }
+  ]
+}
