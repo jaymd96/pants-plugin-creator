@@ -76,6 +76,51 @@ Features:
 - Testing patterns with RuleRunner
 - Best practices and common pitfalls
 
+### 4. pants-setup
+**Setup and manage Pants in repositories**
+
+```
+/pants-plugins:pants-setup
+```
+
+Or ask naturally:
+- "Setup Pants in this repo"
+- "Add the Python baseline plugin"
+- "Search for available Pants plugins"
+- "What Pants packages are available?"
+- "Remove unused Pants backends"
+- "Configure pants.toml"
+
+Features:
+- Add Python baseline plugin (Ruff, ty, uv, pytest)
+- **Search for plugins** on GitHub (`gh repo list jaymd96 --topic pants-plugin`)
+- **Search PyPI** for installable packages (`jaymd96-pants-*`)
+- Discover available backend packages
+- Configure pants.toml with best practices
+- Add/remove third-party plugins
+- **Naming conventions** for creating new plugins
+- General Pants housekeeping
+
+### 5. pants-discover
+**Discover available Pants commands in your repo**
+
+```
+/pants-plugins:pants-discover
+```
+
+Or ask naturally:
+- "What Pants commands can I run?"
+- "Show me available Pants goals"
+- "List all targets in this repo"
+- "What does `pants lint` do?"
+
+Features:
+- List all available goals and commands
+- Show what backends are configured
+- Explain goal-specific options
+- List and explore targets
+- Dependency exploration commands
+
 ## What create-pants-plugin Generates
 
 ```
@@ -116,6 +161,17 @@ The plugin includes comprehensive reference docs:
 - `targets.md` - Complete Target API reference
 - `rules.md` - Complete Rules API reference
 - `testing.md` - Testing patterns and utilities
+
+**pants-setup:**
+- `pants-toml.md` - Complete pants.toml configuration reference
+- `backends.md` - All available backend packages
+- `plugins.md` - Third-party plugin installation guide
+- `search-plugins.md` - Search GitHub/PyPI for plugins
+- `naming-conventions.md` - Plugin naming standards
+
+**pants-discover:**
+- `goals.md` - Complete goals reference
+- `target-types.md` - All target types reference
 
 ## Development Workflow
 
