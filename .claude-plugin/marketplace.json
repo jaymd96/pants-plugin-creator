@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "pants-plugin-creator",
-      "source": ".",
+      "source": "./plugins/pants-plugin-creator",
       "description": "Create production-grade Pants build system plugins with guided assistance",
       "version": "1.0.0",
       "keywords": ["pants", "build-system", "plugin", "scaffolding", "python"]
